@@ -9,9 +9,6 @@ while not finished:
     try:
         result = int(input("Enter a valid integer: "))
         finished = True
-    except:
-        ValueError
+    except ValueError:
         print("Please enter a valid integer.")
 print("Valid result is:", result)
-
-# Don't know what python is going on about, look at answer after getting the code to work but it doesn't seem right either....
