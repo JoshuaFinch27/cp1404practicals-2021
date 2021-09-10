@@ -1,5 +1,5 @@
 """
-CP1404/CP5632 Practical - Hexadecimal colour lookup program
+CP1404 Practical - Hexadecimal colour lookup program
 """
 
 NAME_TO_HEX = {"aliceblue": "#f0f8ff", "antiquewhite": "faebd7", "antiquewhite1": "#ffefdb", "antiquewhite2": "#eedfcc",

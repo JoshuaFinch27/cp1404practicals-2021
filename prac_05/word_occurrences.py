@@ -1,5 +1,5 @@
 """
-CP1404/CP5632 Practical - Count word occurrences in a string
+CP1404 Practical - Count word occurrences in a string
 This example is in the lecture notes 3 different ways
 """
 
