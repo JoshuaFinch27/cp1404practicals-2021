@@ -1,5 +1,5 @@
 """
-CP1404 Practical - Programming language class with tests
+CP1404 prac_06 - Programming language class with tests
 """
 
 

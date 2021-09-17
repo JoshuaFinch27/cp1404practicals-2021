@@ -1,5 +1,5 @@
 """
-CP1404 Practical - Programming language client code
+CP1404 prac_06 - Programming language client code
 
 'On paper' first attempt of last segment of task:
 
