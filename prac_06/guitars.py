@@ -4,10 +4,6 @@ Cp1404 prac_06 - Guitar Program - uses Guitar class
 from prac_06.guitar import Guitar
 
 PROGRAM_DESCRIPTION = "My guitars!"
-CURRENT_YEAR = 2021
-GUITAR_TOO_OLD = 1000
-MAXIMUM_GUITAR_COST = 3000000  # Most expensive guitar sold for $2,700,000 https://www.gak.co.uk/blog/expensive-guitars/
-MINIMUM_GUITAR_COST = 0
 
 
 def main():
@@ -17,17 +13,25 @@ def main():
     name = input("Name: ")
     while name != "":
         year = int(input("Year: "))
-        while CURRENT_YEAR < year < GUITAR_TOO_OLD:
-            print("Invalid year of construction/purchase.")
-            year = int(input("Year: "))
-        cost = float(input("Cost: "))
-        while MAXIMUM_GUITAR_COST < cost <= MINIMUM_GUITAR_COST:
-            print(f"Invalid cost of guitar, must be more than ${MINIMUM_GUITAR_COST} and less than ${MAXIMUM_GUITAR_COST}")
-            cost = float(input("Cost: "))
+        cost = float(input("Cost: $"))
         add_new_guitar = Guitar(name, year, cost)
         guitars.append(add_new_guitar)
-        print(f"{add_new_guitar} added.\n")
+        print(Guitar.__str__(add_new_guitar), "added.")
         name = input("Name: ")
+    # Test data
+    guitars.append(Guitar("Gibson L-5 CES", 1922, 16035.40))
+    guitars.append(Guitar("Line 6 JTV-59", 2010, 1512.9))
+
+    if guitars:     # empty = False, not-empty = True
+        guitars.sort()
+        print("These are my guitars:")
+        for i, guitar in enumerate(guitars):
+            vintage_string = ""
+            if guitar.is_vintage():
+                vintage_string = " (vintage)"
+            print(f"Guitar {i + 1}: {guitar.name:>20} ({guitar.year}), worth ${guitar.cost:10,.2f}{vintage_string}")
+    else:
+        print("Why are you using this program if you don't have any guitars?")
 
 
 main()
