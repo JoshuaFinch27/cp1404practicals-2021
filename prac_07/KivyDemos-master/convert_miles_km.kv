@@ -1,0 +1,33 @@
+BoxLayout:
+    orientation: "vertical"
+
+    BoxLayout:
+        orientation: "horizontal"
+        TextInput:
+            id: distance_miles_input
+            text: ""
+            font_size: 20
+            on_text: app.calculate_mile_km_conversion()
+
+        BoxLayout:
+            orientation: "vertical"
+            size_hint_x: 0.5
+            Button:
+                text: "Up"
+                on_press: app.increment_input(1)
+            Button:
+                text: "Down"
+                on_press: app.increment_input(-1)
+
+    BoxLayout:
+        orientation: "vertical"
+        Button:
+            text: "Convert miles to km"
+            on_press: app.
+
+    Label:
+        id: distance_km_output
+        text: ""
+        font_size: 20
+#        color: () ???
+
