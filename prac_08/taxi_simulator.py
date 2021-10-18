@@ -29,8 +29,13 @@ def main():
     while menu_choice != "q":
         if menu_choice == "c":
             print("Taxis available:")
-            print(taxis)
-            taxi_choice = int(input("Choose taxi: "))
+            print(display_taxi_list(taxis))
+            taxi_choice = 0
+            while taxi_choice == 0:
+                try:
+                    taxi_choice = int(input("Choose taxi: "))
+                except ValueError:
+                    print("Invalid choice, please choose an available taxi.")
             try:
                 current_taxi = taxis[taxi_choice]
             except IndexError:
@@ -50,8 +55,15 @@ def main():
         print(f"Bill to date: ${total_trip_cost:.2f}")
         print(MAIN_MENU)
         menu_choice = input(">>> ").lower()
-    print(f"Total trip cost: ${total_trip_cost:.2f}")
-    print(f"Taxis are now:\n{taxis}")
+    print(f"Total trip cost: ${total_trip_cost:.2f}\n")
+    print("Taxis are now:")
+    display_taxi_list(taxis)
+
+
+def display_taxi_list(taxis):
+    """Display a numbered list of taxis"""
+    for i, taxi in enumerate(taxis):
+        print(f"{i} - {taxi}")
 
 
 main()
