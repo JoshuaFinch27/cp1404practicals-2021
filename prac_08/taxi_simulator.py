@@ -46,7 +46,7 @@ def main():
                 current_taxi.start_fare()
                 current_taxi.drive(trip_distance)
                 trip_cost = current_taxi.get_fare()
-                print(f"Your {current_taxi.name} trip cost you ${trip_cost}")
+                print(f"Your {current_taxi.name} trip cost you ${trip_cost:.2f}")
                 total_trip_cost += trip_cost
             else:
                 print("You need to choose a taxi before you can drive.")
